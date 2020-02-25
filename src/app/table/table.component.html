@@ -1,0 +1,100 @@
+<div ng-controller="MenuCtrl" class="modalbutton">
+  <i class="fa fa-eye fa-4x" aria-hidden="true" (click)="openModalWithComponent()"></i>
+</div>
+
+<div *ngIf="data" class="container">
+    <div *ngIf="false">
+      <input type="text" class="search" placeholder="Search for details">
+    </div>
+    <table class="table" style="width:1300px;">
+      <thead>
+      <tr>
+        <th *ngIf="delete" style="width: 4%">&nbsp;</th>
+        <th><input type="checkbox" [checked]="checkAll" (change)="selected($event,row.id)" #row ></th>
+        <th *ngFor="let header of data.headers" >{{header}}</th>
+        <!--<th *ngIf="update">&nbsp;</th>-->
+      </tr>
+      </thead>
+<!-- let folder of subDirectoryCollection"[sh-context]="childContextMenu,[sh-data-context]="{entityRef: folder, parentRef: this}"
+ [ngClass]="(folder.Id === selectedItem?.Id) ? 'selected-item' : ''"-->
+      <tbody><!--[@filterAnimation]="totalhero"-->
+      <tr *ngFor="let row of data.data;let set of data.data; let i = index; "  (click)="fireRowClick(row)" >
+        <td *ngIf="update"><input type="checkbox" [checked]="checkAll" (change)="selected($event,row.id)"></td>
+       <!-- <td>{{ i+1 }}</td>-->
+        <td *ngFor="let attr of displayed" >{{row[attr]}}</td>
+       <!-- <td *ngIf="update" style="text-align:center">
+          <span (click)="showUpdate(row.id)">🖉</span>
+        </td>-->
+       
+      </tr>
+        
+     
+    </tbody>
+ <tfoot>
+    <tr>
+      <td>Showing {{page}} of {{totalItems()}}</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>
+       <!-- <select (change)="pageOnChange(device.value)" #device>
+          <option value="10">10</option>
+          <option value="15">15</option>
+          <option value="20">20</option>
+          <option value="100">100</option>
+        </select>-->
+        <ul class="pagination pagination-sm">
+          <li class="page-item">
+              <a class="page-link" href="#" aria-label="Previous"(click)="previousPage()">
+                  <span aria-hidden="true">&laquo;</span>
+                  <span class="sr-only" >Previous</span>
+              </a>
+          </li>
+          <li class="page-item"><a class="page-link" href="#"(click)="previousPage()">1</a></li>
+          <li class="page-item"><a class="page-link" href="#"(click)="pages()">2</a></li>
+          <li class="page-item"><a class="page-link" href="#"(click)="nextPage()">3</a></li>
+          <li class="page-item">
+              <a class="page-link" href="#" aria-label="Next" (click)="nextPage()">
+                  <span aria-hidden="true">&raquo;</span>
+                  <span class="sr-only">Next</span>
+              </a>
+          </li>
+      </ul>
+      </td>
+     <!--
+      <td><button class="link-button" (click)="previousPage()">Previous</button>-
+      <button class="link-button" (click)="nextPage()">Next</button>-->
+     </tr>
+ </tfoot>
+</table>
+
+
+<!--
+    <div *ngIf="update && dialogue" class="update" (click)="closeDialogue()">
+  
+      <div class="update-box" (click)="$event.stopPropagation()">
+        <h2>Edit the Row</h2>
+        <form #customForm="ngForm" novalidate (ngSubmit)="submitUpdateRow(dialogeData); closeDialogue()">
+          <div class="f-x">
+            <ng-container *ngFor="let attr of displayed; let i = index">
+              <div *ngIf="attr!='id' " class="f-y">
+                <label>{{data.headers[i]}}</label>
+                <input type="text" [value]="dialogeData[attr]" [placeholder]="attr" [name]="attr"
+                       [(ngModel)]="dialogeData[attr]">
+              </div>
+            </ng-container>
+          </div>
+          <footer>
+            <br>
+            <button type="submit">Update the row</button>
+            <button type="button" (click)="closeDialogue()">Cancel</button>
+          </footer>
+        </form>
+      </div>
+    </div>  -->
+  
+  </div>
+
+  
