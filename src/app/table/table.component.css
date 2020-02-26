@@ -106,7 +106,7 @@ i,button{
       flex-direction: column;
     }
 
-    .f-y {
+    /*.f-y {
       display: flex;
       flex-direction: column;
       margin-top: 6px;
@@ -115,7 +115,7 @@ i,button{
       margin-right: 4px;
       padding: 4px;
 
-    }
+    }*/
     button{
         box-shadow: 0px 2px 6px rgba(9, 142, 223, 0.3);
         border-radius: 4px;
