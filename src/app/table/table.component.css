@@ -62,12 +62,10 @@ text-decoration: none;
 }
 
 
-tbody tr:hover {
+/*tbody tr:hover {
    height: 50px;
-   /*box-shadow: 5px 10px #FFFFFF;*/
-  /* background-color: #F2F9FF;*/
 
-}
+}*/
 
 i,button{
   
