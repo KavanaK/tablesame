@@ -10,6 +10,7 @@ import { ModalComponent } from './modal/modal.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AnimationsComponent } from './core/animations/animations.component';
 import { ButtonComponent } from './core/button/button.component';
+import {FormsModule, NgForm} from '@angular/forms';
 
 
 @NgModule({
@@ -27,6 +28,7 @@ import { ButtonComponent } from './core/button/button.component';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    FormsModule,
     ModalModule.forRoot()
   ],
   providers: [],

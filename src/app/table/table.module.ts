@@ -12,6 +12,7 @@ import {BsModalRef} from 'ngx-bootstrap/modal';
     CommonModule,
     FormsModule,
     ModalComponent,
+
     
   ],
   exports: [TableComponent]

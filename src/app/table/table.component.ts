@@ -7,6 +7,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ValueConverter } from '@angular/compiler/src/render3/view/template';
 import {trigger,state,style,animate,transition,query,stagger} from '@angular/animations';
+import {FormsModule, NgForm} from '@angular/forms';
 import { ButtonComponent } from '../core/button/button.component';
 @Component({
   selector: 'json-table',

@@ -18,14 +18,14 @@
       </thead>
 <!-- let folder of subDirectoryCollection"[sh-context]="childContextMenu,[sh-data-context]="{entityRef: folder, parentRef: this}"
  [ngClass]="(folder.Id === selectedItem?.Id) ? 'selected-item' : ''"-->
-      <tbody><!--[@filterAnimation]="totalhero"-->
-      <tr *ngFor="let row of data.data;let set of data.data; let i = index; "  (click)="fireRowClick(row)">
-        <td *ngIf="update"><input type="checkbox"  [checked]="row" (change)="selected($event,row.id)"    ></td>
+      <tbody><!--[@filterAnimation]="totalhero"--><!--*ngIf="[(checked)]="row.id""-->
+      <tr *ngFor="let row of data.data;let set of data.data; let i = index; " (click)="fireRowClick(row)">
+        <td *ngIf="update"><input type="checkbox"  (change)="selected($event,row.id)"  ></td>
        <!-- <td>{{ i+1 }}</td>--><!--[style.backgroundColor]="row ? '#F2F9FF':'#FFFFFF' "-->
-        <td *ngFor="let attr of displayed"  [style.backgroundColor]="row ? '#F2F9FF':'#FFFFFF' " >{{row[attr]}}</td>
-       <!-- <td *ngIf="update" style="text-align:center">
-          <span (click)="showUpdate(row.id)">🖉</span>
-        </td>-->
+        <td *ngFor="let attr of displayed" >{{row[attr]}}</td>
+        <td *ngIf="update" style="text-align:center">
+          <span (click)="showUpdate(row.id)"><i class="fa fa-trash" aria-hidden="true"></i></span>
+        </td>
        
       </tr>
         
@@ -72,29 +72,29 @@
 </table>
 
 
-<!--
+
     <div *ngIf="update && dialogue" class="update" (click)="closeDialogue()">
   
       <div class="update-box" (click)="$event.stopPropagation()">
-        <h2>Edit the Row</h2>
+        <span>Delete Row</span>
         <form #customForm="ngForm" novalidate (ngSubmit)="submitUpdateRow(dialogeData); closeDialogue()">
           <div class="f-x">
-            <ng-container *ngFor="let attr of displayed; let i = index">
+           <!-- <ng-container *ngFor="let attr of displayed; let i = index">
               <div *ngIf="attr!='id' " class="f-y">
                 <label>{{data.headers[i]}}</label>
                 <input type="text" [value]="dialogeData[attr]" [placeholder]="attr" [name]="attr"
                        [(ngModel)]="dialogeData[attr]">
               </div>
-            </ng-container>
+            </ng-container>-->
           </div>
           <footer>
             <br>
-            <button type="submit">Update the row</button>
-            <button type="button" (click)="closeDialogue()">Cancel</button>
+            <button type="button" class="btn btn-lg btn-outline-primary">Yes</button>
+            <button type="button" (click)="closeDialogue()"class="btn btn-lg btn-outline-primary">No</button> &nbsp;
           </footer>
         </form>
       </div>
-    </div>  -->
+    </div>  
   
   </div>
 
