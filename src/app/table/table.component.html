@@ -20,9 +20,9 @@
  [ngClass]="(folder.Id === selectedItem?.Id) ? 'selected-item' : ''"-->
       <tbody><!--[@filterAnimation]="totalhero"-->
       <tr *ngFor="let row of data.data;let set of data.data; let i = index; "  (click)="fireRowClick(row)">
-        <td *ngIf="update"><input type="checkbox"  [checked]="checkAll" (change)="selected($event,row.id)"    ></td>
+        <td *ngIf="update"><input type="checkbox"  [checked]="row" (change)="selected($event,row.id)"    ></td>
        <!-- <td>{{ i+1 }}</td>--><!--[style.backgroundColor]="row ? '#F2F9FF':'#FFFFFF' "-->
-        <td *ngFor="let attr of displayed" >{{row[attr]}}</td>
+        <td *ngFor="let attr of displayed"  [style.backgroundColor]="row ? '#F2F9FF':'#FFFFFF' " >{{row[attr]}}</td>
        <!-- <td *ngIf="update" style="text-align:center">
           <span (click)="showUpdate(row.id)">🖉</span>
         </td>-->
