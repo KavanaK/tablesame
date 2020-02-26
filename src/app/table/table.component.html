@@ -73,12 +73,12 @@
 
 
 
-    <div *ngIf="update && dialogue" class="update" (click)="closeDialogue()">
+    <div *ngIf="update && dialogue" class="update" (click)="closeDialogue()" >
   
       <div class="update-box" (click)="$event.stopPropagation()">
-        <span>Delete Row</span>
+        <span class="modal-header">Delete</span>
         <form #customForm="ngForm" novalidate (ngSubmit)="submitUpdateRow(dialogeData); closeDialogue()">
-          <div class="f-x">
+          <div class="f-x modal-body">
            <!-- <ng-container *ngFor="let attr of displayed; let i = index">
               <div *ngIf="attr!='id' " class="f-y">
                 <label>{{data.headers[i]}}</label>
@@ -86,8 +86,11 @@
                        [(ngModel)]="dialogeData[attr]">
               </div>
             </ng-container>-->
+            <p>
+              Are you sure You want to delete?
+            </p>
           </div>
-          <footer>
+          <footer class="modal-footer">
             <br>
             <button type="button" class="btn btn-lg btn-outline-primary">Yes</button>
             <button type="button" (click)="closeDialogue()"class="btn btn-lg btn-outline-primary">No</button> &nbsp;
