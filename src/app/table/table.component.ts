@@ -48,7 +48,8 @@ export class TableComponent implements OnInit {
   @Output() selectRow: EventEmitter<any> = new EventEmitter<any>();
    // totalhero = -1;
   data: any = {};
-
+  marked = false;
+  theCheckbox = false;
   displayed = [];
   perpage = 10;
   total: number;
@@ -73,6 +74,9 @@ export class TableComponent implements OnInit {
   {
     this.previousPage();
   }
+}
+toggleVisibility(e){
+  this.marked= e.target.checked;
 }
 pagination(){
   if(this.page>1){
