@@ -11,7 +11,7 @@
       <thead>
       <tr>
         <th *ngIf="delete" style="width: 4%">&nbsp;</th>
-        <th><input type="checkbox" [checked]="checkAll" [(ngModel)]="theCheckbox" (change)="toggleVisibility($event)"(change)="selected($event,row.id)" #row ></th>
+        <th><input type="checkbox"  [(indeterminate)]="indeterminate" [(ngModel)]="theCheckbox" (change)="toggleVisibility($event)"(change)="selected($event,row.id)" #row ></th>
         <th *ngFor="let header of data.headers" >{{header}}</th>
         <!--<th *ngIf="update">&nbsp;</th>-->
         <th><span *ngIf="marked"> <span (click)="showUpdate(row.id)"><i class="fa fa-trash" aria-hidden="true"></i></span></span></th>
@@ -21,9 +21,9 @@
  [ngClass]="(folder.Id === selectedItem?.Id) ? 'selected-item' : ''"-->
       <tbody><!--[@filterAnimation]="totalhero"--><!--*ngIf="[(checked)]="row.id""-->
       <tr *ngFor="let row of data.data;let set of data.data; let i = index; " (click)="fireRowClick(row)">
-        <td *ngIf="update"><input type="checkbox"  (change)="selected($event,row.id)"  ></td>
+        <td *ngIf="update"><input type="checkbox" [(ngModel)]="theCheckbox" [(ngModel)]="indeterminate" (change)="toggleVisibility($event,row.id)"  (change)="selected($event,row.id)"  ></td>
        <!-- <td>{{ i+1 }}</td>--><!--[style.backgroundColor]="row ? '#F2F9FF':'#FFFFFF' "-->
-        <td *ngFor="let attr of displayed" >{{row[attr]}}</td>
+        <td *ngFor="let attr of displayed">{{row[attr]}}</td>
         <td *ngIf="update" style="text-align:center">
           <span (click)="showUpdate(row.id)"><i class="fa fa-trash" aria-hidden="true"></i></span>
         </td>

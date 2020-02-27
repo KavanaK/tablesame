@@ -49,6 +49,8 @@ export class TableComponent implements OnInit {
    // totalhero = -1;
   data: any = {};
   marked = false;
+  markeds = false;
+  indeterminate = false;
   theCheckbox = false;
   displayed = [];
   perpage = 10;
@@ -78,6 +80,11 @@ export class TableComponent implements OnInit {
 toggleVisibility(e){
   this.marked= e.target.checked;
 }
+toggleVisibilitys(e,id){
+    this.markeds= id.target.checked;
+  
+}
+
 pagination(){
   if(this.page>1){
     if(this.page<3){

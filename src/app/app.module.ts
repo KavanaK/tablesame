@@ -11,7 +11,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AnimationsComponent } from './core/animations/animations.component';
 import { ButtonComponent } from './core/button/button.component';
 import {FormsModule, NgForm} from '@angular/forms';
-
+import { MatCheckboxModule } from '@angular/material';
 
 @NgModule({
   declarations: [
@@ -29,6 +29,7 @@ import {FormsModule, NgForm} from '@angular/forms';
     AppRoutingModule,
     BrowserAnimationsModule,
     FormsModule,
+    MatCheckboxModule,
     ModalModule.forRoot()
   ],
   providers: [],
