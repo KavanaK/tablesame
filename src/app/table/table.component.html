@@ -27,10 +27,7 @@
         <td *ngIf="update" style="text-align:center">
           <span (click)="showUpdate(row.id)"><i class="fa fa-trash" aria-hidden="true"></i></span>
         </td>
-       
       </tr>
-        
-     
     </tbody>
  <tfoot>
     <tr>
@@ -72,9 +69,6 @@
      </tr>
  </tfoot>
 </table>
-
-
-
     <div *ngIf="update && dialogue" class="update" (click)="closeDialogue()" >
   
       <div class="update-box" (click)="$event.stopPropagation()">
@@ -100,7 +94,6 @@
         </form>
       </div>
     </div>  
-  
   </div>
 
   
