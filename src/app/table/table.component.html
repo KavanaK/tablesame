@@ -7,7 +7,7 @@
     <div *ngIf="false">
       <input type="text" class="search" placeholder="Search for details">
     </div>
-    <table class="table" style="width:1300px;">
+    <table class="table" style="width:1300px;" @fade>
       <thead>
       <tr>
         <th *ngIf="delete" style="width: 4%">&nbsp;</th>
@@ -19,11 +19,11 @@
       </thead>
 <!-- let folder of subDirectoryCollection"[sh-context]="childContextMenu,[sh-data-context]="{entityRef: folder, parentRef: this}"
  [ngClass]="(folder.Id === selectedItem?.Id) ? 'selected-item' : ''"-->
-      <tbody><!--[@filterAnimation]="totalhero"--><!--*ngIf="[(checked)]="row.id""-->
-      <tr *ngFor="let row of data.data;let set of data.data; let i = index; " (click)="fireRowClick(row)">
+      <tbody ><!--[@filterAnimation]="totalhero"--><!--*ngIf="[(checked)]="row.id""-->
+      <tr *ngFor="let row of data.data;let set of data.data; let i = index; " (click)="fireRowClick(row)" >
         <td *ngIf="update"><input type="checkbox" [(ngModel)]="theCheckbox" [(ngModel)]="indeterminate" (change)="toggleVisibility($event,row.id)"  (change)="selected($event,row.id)"  ></td>
        <!-- <td>{{ i+1 }}</td>--><!--[style.backgroundColor]="row ? '#F2F9FF':'#FFFFFF' "-->
-        <td *ngFor="let attr of displayed">{{row[attr]}}</td>
+        <td *ngFor="let attr of displayed" >{{row[attr]}}</td>
         <td *ngIf="update" style="text-align:center">
           <span (click)="showUpdate(row.id)"><i class="fa fa-trash" aria-hidden="true"></i></span>
         </td>

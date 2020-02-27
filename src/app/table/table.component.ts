@@ -13,26 +13,14 @@ import { ButtonComponent } from '../core/button/button.component';
   selector: 'json-table',
   templateUrl: './table.component.html',
   styleUrls: ['./table.component.css'],
-  /*animations: [
-    trigger('filterAnimation', [
-      transition(':enter, * => 0, * => -1', []),
-      transition(':increment', [
-        query(':enter', [
-          style({ opacity: 0, width: '0px' }),
-          stagger(50, [
-            animate('300ms ease-out', style({ opacity: 1, width: '*' })),
-          ]),
-        ], { optional: true })
-      ]),
-      transition(':decrement', [
-        query(':leave', [
-          stagger(50, [
-            animate('300ms ease-out', style({ opacity: 0, width: '0px' })),
-          ]),
-        ])
-      ]),
-    ]),
-  ]*/
+  animations: [
+    trigger('fade', [ 
+      transition('void => *', [
+        style({ opacity: 0 }), 
+        animate(2000, style({opacity: 1}))
+      ]) 
+    ])
+  ]
 })
 export class TableComponent implements OnInit {
   constructor(private modalService: BsModalService) { }
