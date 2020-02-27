@@ -51,7 +51,6 @@ export class TableComponent implements OnInit {
   dialogue = false;
   dialogeData: any = {};
   bsModalRef: BsModalRef;
- // constructor(private modalService: BsModalService) {}
   public openModalWithComponent() {
     /* this is how we open a Modal Component from another component */
     this.bsModalRef = this.modalService.show(ModalComponent);
